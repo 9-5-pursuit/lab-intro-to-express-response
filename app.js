@@ -2,7 +2,6 @@ const express = require("express");
 
 const app = express();
 
-const PORT = 3003;
 const magic8Responses = [
   "It is certain",
   "It is decidedly so",
@@ -71,6 +70,4 @@ app.get("/travis-bickle", (request, response) => {
   response.send("You talking to me?");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is now running on port ${PORT}`);
-});
+module.exports = app;

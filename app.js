@@ -1,4 +1,5 @@
 const express = require('express')
+const eightball = require('./8ball')
 
 const app = express();
 
@@ -8,7 +9,7 @@ app.get('/', (request, response) => {
 
 app.get('/terminator', (request, response) => {
     response.send(`I'll be back`)
-    response.send('Hasta la vista, baby')
+    response.status(200).send('Hasta la vista, baby')
 })
 app.get('/tim-gunn', (request, response) => {
     response.send(`Make it work`)
@@ -34,29 +35,16 @@ app.get('/rocky', (request, response) => {
 app.get('/regis', (request, response) => {
     response.send(`Is that your final answer?`)
 })
+//8 ball
+app.get('/magic8', (request, response) => {
 
-
-
-
-
-
-
-app.post('/', (request, response) => {
-    console.log(response);
-    response.send('')
+    let index = Math.floor(Math.random() * eightball.length)
+    response.send(eightball[index])
 })
+app.get('/magic8page', (request, response) => {
 
-app.post('/', (request, response) => {
-    response.status(401).send('')
-}
-)
-
-app.put('/', (request, response) => {
-    response.status(202).json({
-    })
+    let index = Math.floor(Math.random() * eightball.length)
+    response.send(`<h1>${eightball[index]}</h1>`)
 })
-// app.listen(PORT, () => {
-//     console.log(`server is now running on port ${PORT}`);
-// })
 
 module.exports = app

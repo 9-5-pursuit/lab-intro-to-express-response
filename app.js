@@ -18,7 +18,35 @@ app.get("/", (request, response) => {
 
 app.get("/terminator", (request, response) => {
   response.send("I'll be back");
-  response.send("Hasta la vista, baby");
+  //   response.send("Hasta la vista, baby");
+});
+
+const magic8Responses = [
+  "It is certain",
+  "It is decidedly so",
+  "Without a doubt",
+  "Yes - Definitely",
+  "You may rely on it",
+  "As I see it, yes",
+  "Most likely",
+  "Outlook good",
+  "Yes, and signs point to yes",
+  "Reply hazy, try again",
+  "Ask again later",
+  "Better not tell you now",
+  "Cannot predict now",
+  "Concentrate and ask again",
+  "Don't count on it",
+  "My reply is no",
+  "My sources say no",
+  "Outlook not so good",
+  "Very doubtful",
+];
+
+app.get("/magic8", (request, response) => {
+  const magic8RandomIndex = Math.floor(Math.random() * magic8Responses.length);
+  const magic8RandomAnswer = magic8Responses[magic8RandomIndex];
+  response.send(`<h1>${magic8RandomAnswer}</h1>`);
 });
 
 //received an error message when trying to add a new catchphrase to the previous route because The http protocol is very specific in that there is one response for every request.

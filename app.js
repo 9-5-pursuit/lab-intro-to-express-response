@@ -18,7 +18,11 @@ app.get("/", (request, response) => {
 
 app.get("/terminator", (request, response) => {
   response.send("I'll be back");
+  response.send("Hasta la vista, baby");
 });
+
+//received an error message when trying to add a new catchphrase to the previous route because The http protocol is very specific in that there is one response for every request.
+//The error message is telling us that we are trying to set another set of headers after the first one.
 
 app.get("/Emeril", (request, response) => {
   response.send("Bam!");

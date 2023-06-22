@@ -16,6 +16,46 @@ app.get("/", (request, response) => {
   response.send("Hello there!");
 });
 
+app.get("/terminator", (request, response) => {
+  response.send("I'll be back");
+});
+
+app.get("/Emeril", (request, response) => {
+  response.send("Bam!");
+});
+
+app.get("/Steve-McGarrett", (request, response) => {
+  response.send("Book 'em Danno");
+});
+
+app.get("/Coach-Taylor", (request, response) => {
+  response.send("Clear eyes, full hearts, can't Lose");
+});
+
+app.get("/Homer-Simpson", (request, response) => {
+  response.send(`D'Oh`);
+});
+
+app.get("/Bruce-Banner", (request, response) => {
+  response.send("Don't make me angry");
+});
+
+app.get("/JJ-Evans", (request, response) => {
+  response.send("Dy-no-myte!");
+});
+
+app.get("/Batman", (request, response) => {
+  response.send("To the Batmobile!");
+});
+
+app.get("/Hannibal-Smith", (request, response) => {
+  response.send("I love it when a plan comes together");
+});
+
+app.get("/Fraiser", (request, response) => {
+  response.send("I'm listening");
+});
+
 //LISTEN
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

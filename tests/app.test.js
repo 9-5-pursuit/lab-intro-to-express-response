@@ -18,6 +18,7 @@ describe("Test the root path", () => {
         expect(response.statusCode).toBe(200);
       });
   });
+
   test("It should only show one string from the array", () => {
     const request = supertest(app);
     return request.get("/magic8").then((response) => {

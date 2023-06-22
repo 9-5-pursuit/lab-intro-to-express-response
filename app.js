@@ -26,13 +26,13 @@ const magic8Responses = [
 let magic8Answer =
   magic8Responses[Math.floor(Math.random() * magic8Responses.length)];
 
-// app.get("/", (req, resp) => {
-//   resp.status(200).send("WASSSSSSAAAAAAAAAP");
-// });
-
 app.get("/", (req, resp) => {
-  resp.status(418).send("Hello, world!");
+  resp.status(200).send("WASSSSSSAAAAAAAAAP");
 });
+
+// app.get("/", (req, resp) => {
+//   resp.status(418).send("Hello, world!");
+// });
 
 app.get("/magic8", (req, resp) => {
   resp.send(`<h1>${magic8Answer}</h1>`);

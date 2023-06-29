@@ -80,7 +80,7 @@ app.get("/", (req, res) => {
 
  app.get("/magic8", (req, res) => {
    const magic8Answer = getRandomAnswer();
-   res.status(404)(`<h1>${magic8Answer}</h1>`);
+   res.status(404).send(`<h1>${magic8Answer}</h1>`);
  });
 
 module.exports = app;

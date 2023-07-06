@@ -3,36 +3,9 @@ const express = require("express");
 //configuration
 const app = express();
 
-const PORT = 3003;
-
-const magic8Responses = [
-  "It is certain",
-  "It is decidedly so",
-  "Without a doubt",
-  "Yes - Definitely",
-  "You may rely on it",
-  "As I see it, yes",
-  "Most likely",
-  "Outlook good",
-  "Yes, and signs point to yes",
-  "Reply hazy, try again",
-  "Ask again later",
-  "Better not tell you now",
-  "Cannot predict now",
-  "Concentrate and ask again",
-  "Don't count on it",
-  "My reply is no",
-  "My sources say no",
-  "Outlook not so good",
-  "Very doubtful",
-];
-
-const randomIndex = Math.floor(Math.random() * magic8Responses.length);
-const randomResponse = magic8Responses[randomIndex];
-
 //routs
 app.get("/", (request, response) => {
-    response.send("Hello, world!");
+    response.status(418).send("Hello, world!");
 })
 
 //One message shows and not both / only message one shows 
@@ -75,10 +48,39 @@ app.get("/terminator", (request, response) => {
 
  //Activity Magic 8 Ball
  app.get("/magic8", (request, response) => {
+
+const magic8Responses = [
+  "It is certain",
+  "It is decidedly so",
+  "Without a doubt",
+  "Yes - Definitely",
+  "You may rely on it",
+  "As I see it, yes",
+  "Most likely",
+  "Outlook good",
+  "Yes, and signs point to yes",
+  "Reply hazy, try again",
+  "Ask again later",
+  "Better not tell you now",
+  "Cannot predict now",
+  "Concentrate and ask again",
+  "Don't count on it",
+  "My reply is no",
+  "My sources say no",
+  "Outlook not so good",
+  "Very doubtful",
+];
+
+// let magic8Answer =
+//   magic8Responses[Math.floor(Math.random() * magic8Responses.length)];
+
+const randomIndex = Math.floor(Math.random() * magic8Responses.length);
+const randomResponse = magic8Responses[randomIndex];
+
    response.send(`<h1>${randomResponse}</h1>`);
  });
 
 //listen
-app.listen(PORT, () => {
-  console.log(`Server is now running on port ${PORT}`);
-});
+
+
+module.exports = app;

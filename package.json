@@ -4,7 +4,8 @@
   "description": "Intro to Express Response Lab",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodedemon start"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,9 @@
 const app = require("../app");
 const request = require("supertest");
 
-it("Testing to see if supertest works", () => {
-  expect(1).toBe(1);
-});
+// it("Testing to see if supertest works", () => {
+//   expect(1).toBe(1);
+// });
 
 // it("Testing to see if supertest works", () => {
 //   expect(1).toBe(2);

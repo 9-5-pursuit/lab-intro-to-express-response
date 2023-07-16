@@ -1,10 +1,9 @@
-const {repsonse} = require("express");
-const express = require("express")
+const express = require("express");
 
 const app = express();
 
 app.get("/", (req, res)=>{
-    res.status(418).send("Hello World")
+    res.status(418).send("Hello World. Is this not the home route?")
 })
 
 app.get("/terminator", (req, res) => {

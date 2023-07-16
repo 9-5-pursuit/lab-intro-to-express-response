@@ -3,10 +3,14 @@ const express = require("express")
 
 const app = express();
 
+app.get("/", (req, res)=>{
+    res.status(418).send("Hello World")
+})
+
 app.get("/terminator", (req, res) => {
     res.send("I'll be back")
     //ONLY one "res.send" for every "app.get"
-    // res.send("Hasta la vista, baby")
+    res.send("Hasta la vista, baby")
 })
 
 app.get("/Batman", (req, res)=>{
@@ -45,6 +49,7 @@ app.get("/traivs-bickle", (req, res) =>{
     res.send("You talkin' to me?")
 })
 
+
 const magic8Responses = [
     "It is certain",
     "It is decidedly so",
@@ -64,25 +69,18 @@ const magic8Responses = [
     "My reply is no",
     "My sources say no",
     "Outlook not so good",
-    "Very doubtful"
-  
-  ]
+    "Very doubtful",
+  ];
 
-function randomQuote () {
-    // get length of array
-    const length = magic8Responses.length;
-    //that number will be ramonly picked here
-    const randomNumber = Math.floor(Math.random() * length);
-
-    app.get("/magic8", (req, res)=>{
-        // the varibale acts like a number and the the array[index] format is how it works
-        res.send(`<h1>this is a random quote: ${magic8Responses[randomNumber]}</h1>`)
-    })
-}
-//call function
-randomQuote()
-
-
+///////////////////////////////////////////////////////////////////////// 
+app.get("/magic8", (req, res) => {
+    res.send(
+      `<h1>
+        this is a quote: ${magic8Responses[Math.floor(Math.random() * magic8Responses.length)]}
+      </h1>`
+    );
+  });
+///////////////////////////////////////////////////////////////////////// 
 
 
 module.exports = app;
